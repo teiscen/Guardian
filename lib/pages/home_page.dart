@@ -2,6 +2,13 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
+// To connect to Chris' server
+import 'package:http/http.dart' as http;
+
+Future<http.Response> fetchAlbum() {
+  return http.get(Uri.parse('https://jsonplaceholder.typicode.com/albums/1'));
+}
+
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
