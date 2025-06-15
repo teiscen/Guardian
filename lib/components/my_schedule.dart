@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 // https://pub.dev/packages/calendar_view
 import 'package:calendar_view/calendar_view.dart';
 
+
 enum Day{ MON, TUE, WED, THU, FRI, SAT, SUN }
 
 DateTime weeklyDateTime(Day day, int hour, int min){
@@ -29,6 +30,7 @@ class TimeBlock{
     // if withing 5 min of cutoff gets rounded down otherwise rounded up.
     // ignore: prefer_function_declarations_over_variables
     // Requires Dart 3.0+
+    // ignore: prefer_function_declarations_over_variables
     var rounder = (DateTime dt) {
       return switch(dt.minute) {
         <= 5  => DateTime(dt.year, dt.month, dt.day, dt.hour, 0 ),
@@ -96,25 +98,16 @@ class mockSchedule {
 }
 
 
-
 class MySchedule extends StatelessWidget {
-
-
 
   const MySchedule({
     super.key
   });
 
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: WeekView(),
-    )
+    );
   }
-
-
-
-
 }
